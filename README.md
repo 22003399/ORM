@@ -19,11 +19,31 @@ Write your own steps
 
 ## PROGRAM
 
-Include your code here
+```
+admin.py
 
+from django.contrib import admin
+from.models import student,studentAdmin
+admin.site.register(student,studentAdmin)
+
+models.py
+
+from django.db import models
+from django.contrib import admin
+class student(models.Model):
+    sid=models.CharField(max_length=200)
+    name=models.CharField(max_length=100)
+    salary=models.IntegerField()
+    age=models.IntegerField()
+    email=models.EmailField()
+
+class studentAdmin(admin.ModelAdmin):
+    list_display=('sid','name','salary','age','email')
+```
 ## OUTPUT
 
-Include the screenshot of your admin page.
+![Screenshot 2023-05-23 203140](https://github.com/22003399/ORM/assets/121918391/a4cdbb36-4b42-462d-be15-d18b04b99c7c)
 
 
 ## RESULT
+The program for creating an student database using ORM is executed sucessfully.
